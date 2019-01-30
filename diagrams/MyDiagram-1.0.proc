@@ -18,7 +18,7 @@
           <iteratorExpression xmi:type="expression:Expression" xmi:id="_iFpV_iSGEemdC7NyVV8lVg" name="multiInstanceIterator" content="multiInstanceIterator" type="MULTIINSTANCE_ITERATOR_TYPE" returnType="java.lang.Object" returnTypeFixed="true"/>
           <completionCondition xmi:type="expression:Expression" xmi:id="_iFpV_ySGEemdC7NyVV8lVg" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
           <formMapping xmi:type="process:FormMapping" xmi:id="_iFpWACSGEemdC7NyVV8lVg">
-            <targetForm xmi:type="expression:Expression" xmi:id="_vFcSkCSZEemdC7NyVV8lVg" name="newFormTest" content="fb2c3a62-c13b-42d6-b599-7bfc21df83de" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
+            <targetForm xmi:type="expression:Expression" xmi:id="_vFcSkCSZEemdC7NyVV8lVg" name="newFormTestV333" content="c1914bb7-5dd6-4a29-9037-16a7c08cd45c" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
           </formMapping>
           <contract xmi:type="process:Contract" xmi:id="_iFp9ASSGEemdC7NyVV8lVg"/>
           <expectedDuration xmi:type="expression:Expression" xmi:id="_iFp9AiSGEemdC7NyVV8lVg" name="" content="" returnType="java.lang.Long" returnTypeFixed="true"/>
@@ -38,7 +38,7 @@
         <defaultValue xmi:type="expression:Expression" xmi:id="_pWDG0SSZEemdC7NyVV8lVg" name="init_example()" content="return &quot;víctor&quot;" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT"/>
       </data>
       <formMapping xmi:type="process:FormMapping" xmi:id="_iFp9AySGEemdC7NyVV8lVg">
-        <targetForm xmi:type="expression:Expression" xmi:id="_y1dgMCScEemdC7NyVV8lVg" name="instantiationForm" content="edd13008-14f9-4058-968e-6b3b45f152e6" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
+        <targetForm xmi:type="expression:Expression" xmi:id="_y1dgMCScEemdC7NyVV8lVg" name="" content="edd13008-14f9-4058-968e-6b3b45f152e6" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
       </formMapping>
       <overviewFormMapping xmi:type="process:FormMapping" xmi:id="_iFp9BSSGEemdC7NyVV8lVg">
         <targetForm xmi:type="expression:Expression" xmi:id="_iFp9BiSGEemdC7NyVV8lVg" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
