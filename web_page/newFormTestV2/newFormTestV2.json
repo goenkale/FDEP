@@ -2,7 +2,7 @@
   "designerVersion" : "1.8.31",
   "id" : "newFormTestV2",
   "name" : "newFormTestV2",
-  "lastUpdate" : 1548858255978,
+  "lastUpdate" : 1548858748004,
   "rows" : [ [ {
     "type" : "container",
     "dimension" : {
@@ -133,6 +133,39 @@
       "reference" : "2e7c97e9-5017-41c7-91f4-909a5e21fbe4",
       "hasValidationError" : false,
       "id" : "pbText"
+    } ], [ {
+      "type" : "component",
+      "dimension" : {
+        "xs" : 12,
+        "sm" : 12,
+        "md" : 12,
+        "lg" : 12
+      },
+      "propertyValues" : {
+        "cssClasses" : {
+          "type" : "constant",
+          "value" : ""
+        },
+        "hidden" : {
+          "type" : "constant",
+          "value" : false
+        },
+        "text" : {
+          "type" : "interpolation",
+          "value" : "{{text}}"
+        },
+        "level" : {
+          "type" : "constant",
+          "value" : "Level 2"
+        },
+        "alignment" : {
+          "type" : "constant",
+          "value" : "left"
+        }
+      },
+      "reference" : "3739f8ee-62f4-4d98-9ef4-30cd907473bf",
+      "hasValidationError" : false,
+      "id" : "pbTitle"
     } ] ]
   } ], [ {
     "type" : "formContainer",
@@ -295,7 +328,7 @@
     },
     "formOutput" : {
       "type" : "expression",
-      "value" : "return {\n\n};",
+      "value" : "return {\n\n};\n",
       "exposed" : false
     },
     "context" : {
@@ -306,6 +339,11 @@
     "taskId" : {
       "type" : "urlparameter",
       "value" : "id",
+      "exposed" : false
+    },
+    "text" : {
+      "type" : "expression",
+      "value" : "return \"door\";\n//return uiTranslate(\"door\");",
       "exposed" : false
     }
   },
