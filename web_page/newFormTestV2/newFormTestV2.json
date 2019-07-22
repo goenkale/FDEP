@@ -1,8 +1,9 @@
 {
-  "designerVersion" : "1.8.31",
+  "designerVersion" : "1.9.24",
+  "previousDesignerVersion" : "1.8.31",
   "id" : "newFormTestV2",
   "name" : "newFormTestV2",
-  "lastUpdate" : 1548858255978,
+  "lastUpdate" : 1563784852842,
   "rows" : [ [ {
     "type" : "container",
     "dimension" : {
@@ -128,6 +129,14 @@
         "dimension" : {
           "type" : "constant",
           "value" : 12
+        },
+        "labelPosition" : {
+          "type" : "constant",
+          "value" : "top"
+        },
+        "labelWidth" : {
+          "type" : "constant",
+          "value" : 4
         }
       },
       "reference" : "2e7c97e9-5017-41c7-91f4-909a5e21fbe4",
