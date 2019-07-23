@@ -2,7 +2,7 @@
   "designerVersion" : "1.9.49",
   "id" : "vacationRequestPage",
   "name" : "vacationRequestPage",
-  "lastUpdate" : 1563871745621,
+  "lastUpdate" : 1563881092650,
   "rows" : [ [ {
     "type" : "component",
     "dimension" : {
@@ -106,7 +106,8 @@
         "value" : "temp.failed"
       },
       "targetUrlOnSuccess" : {
-        "type" : "interpolation"
+        "type" : "interpolation",
+        "value" : ""
       },
       "collectionToModify" : {
         "type" : "variable"
@@ -196,17 +197,22 @@
   "data" : {
     "vacationRequest" : {
       "type" : "url",
-      "value" : "../API/bdm/businessData/com.company.model.VacationRequest?p=0&c=100&q=find",
+      "value" : "../API/bdm/businessData/com.company.model.VacationRequest?p=0&c=100&q=find&t={{exp_reload}}",
       "exposed" : false
     },
     "temp" : {
       "type" : "json",
-      "value" : "{}",
+      "value" : "{\n    \"trigger\": 1,\n    \"flag\": false\n}",
       "exposed" : false
     },
     "exp_build_cancellation_payload" : {
       "type" : "expression",
-      "value" : "return {\r\n  \"messageName\" : \"cancellation_message\" ,\r\n  \"targetProcess\": \"VacationRequestBasic\",\r\n  \"targetFlowNode\": \"cancellationProcess\", //Optional\r\n  \"messageContent\" : {\r\n  },\r\n  \"correlations\" : {\r\n      \"correlation_key\" : {\r\n          \"value\" : $data.temp.selected.newRequestProcessInstanceId\r\n      }\r\n  }\r\n}",
+      "value" : "if($data.temp.selected){\r\n    return {\r\n      \"messageName\" : \"cancellation_message\" ,\r\n      \"targetProcess\": \"VacationRequestBasic\",\r\n      \"targetFlowNode\": \"cancellationProcess\", //Optional\r\n      \"messageContent\" : {\r\n      },\r\n      \"correlations\" : {\r\n          \"correlation_key\" : {\r\n              \"value\" : $data.temp.selected.newRequestProcessInstanceId\r\n          }\r\n      }\r\n    }\r\n}",
+      "exposed" : false
+    },
+    "exp_reload" : {
+      "type" : "expression",
+      "value" : "if($data.temp.success === \"\"){\n    \n    \n    setTimeout(function() { \n        \n        console.log(\"*trigger: \", $data.temp.trigger);\n        \n       /* $data.temp.trigger = new Date();\n        $data.temp.success = undefined;*/\n        return new Date();\n        \n    }, 500);\n    \n    \n    \n    \n}else{\n    return 1;\n}\n",
       "exposed" : false
     }
   },
