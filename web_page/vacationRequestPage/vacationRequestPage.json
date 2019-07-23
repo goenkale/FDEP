@@ -1,0 +1,217 @@
+{
+  "designerVersion" : "1.9.49",
+  "id" : "vacationRequestPage",
+  "name" : "vacationRequestPage",
+  "lastUpdate" : 1563871745621,
+  "rows" : [ [ {
+    "type" : "component",
+    "dimension" : {
+      "xs" : 12,
+      "sm" : 12,
+      "md" : 12,
+      "lg" : 12
+    },
+    "propertyValues" : {
+      "cssClasses" : {
+        "type" : "constant",
+        "value" : ""
+      },
+      "hidden" : {
+        "type" : "constant",
+        "value" : false
+      },
+      "headers" : {
+        "type" : "constant",
+        "value" : [ "Case Id", "Start Date", "Return Date", "Number of days", "Status" ]
+      },
+      "content" : {
+        "type" : "expression",
+        "value" : "vacationRequest"
+      },
+      "columnsKey" : {
+        "type" : "constant",
+        "value" : [ "newRequestProcessInstanceId", "startDate", "returnDate", "numberOfDays", "status" ]
+      },
+      "selectedRow" : {
+        "type" : "variable",
+        "value" : "temp.selected"
+      }
+    },
+    "reference" : "18b04568-6080-4181-8e76-e894f6eb4475",
+    "hasValidationError" : false,
+    "id" : "pbTable"
+  } ], [ {
+    "type" : "component",
+    "dimension" : {
+      "xs" : 12,
+      "sm" : 12,
+      "md" : 12,
+      "lg" : 12
+    },
+    "propertyValues" : {
+      "cssClasses" : {
+        "type" : "constant",
+        "value" : ""
+      },
+      "hidden" : {
+        "type" : "expression",
+        "value" : "!temp.selected"
+      },
+      "disabled" : {
+        "type" : "constant",
+        "value" : false
+      },
+      "label" : {
+        "type" : "interpolation",
+        "value" : "Cancel"
+      },
+      "alignment" : {
+        "type" : "constant",
+        "value" : "center"
+      },
+      "buttonStyle" : {
+        "type" : "constant",
+        "value" : "danger"
+      },
+      "action" : {
+        "type" : "constant",
+        "value" : "POST"
+      },
+      "assign" : {
+        "type" : "constant",
+        "value" : false
+      },
+      "url" : {
+        "type" : "interpolation",
+        "value" : "http://localhost:22785/bonita/API/bpm/message"
+      },
+      "responseStatusCode" : {
+        "type" : "variable",
+        "value" : ""
+      },
+      "dataToSend" : {
+        "type" : "expression",
+        "value" : "exp_build_cancellation_payload"
+      },
+      "dataFromSuccess" : {
+        "type" : "variable",
+        "value" : "temp.success"
+      },
+      "closeOnSuccess" : {
+        "type" : "constant",
+        "value" : false
+      },
+      "dataFromError" : {
+        "type" : "variable",
+        "value" : "temp.failed"
+      },
+      "targetUrlOnSuccess" : {
+        "type" : "interpolation"
+      },
+      "collectionToModify" : {
+        "type" : "variable"
+      },
+      "modalId" : {
+        "type" : "constant",
+        "value" : ""
+      },
+      "collectionPosition" : {
+        "type" : "constant",
+        "value" : "Last"
+      },
+      "valueToAdd" : {
+        "type" : "constant"
+      },
+      "removeItem" : {
+        "type" : "variable"
+      }
+    },
+    "reference" : "d8b4e2cf-baae-462f-a1bb-e2b33d825b4d",
+    "hasValidationError" : false,
+    "id" : "pbButton"
+  } ], [ {
+    "type" : "component",
+    "dimension" : {
+      "xs" : 12,
+      "sm" : 12,
+      "md" : 12,
+      "lg" : 12
+    },
+    "propertyValues" : {
+      "cssClasses" : {
+        "type" : "constant",
+        "value" : ""
+      },
+      "hidden" : {
+        "type" : "constant",
+        "value" : false
+      },
+      "labelHidden" : {
+        "type" : "constant",
+        "value" : true
+      },
+      "label" : {
+        "type" : "interpolation",
+        "value" : "Default label"
+      },
+      "labelPosition" : {
+        "type" : "constant",
+        "value" : "top"
+      },
+      "labelWidth" : {
+        "type" : "constant",
+        "value" : 4
+      },
+      "allowHTML" : {
+        "type" : "constant",
+        "value" : true
+      },
+      "text" : {
+        "type" : "interpolation",
+        "value" : "exp_build_cancellation_payload<pre>{{exp_build_cancellation_payload| json}}</pre>\ntemp <pre>{{temp | json}}</pre>"
+      },
+      "alignment" : {
+        "type" : "constant",
+        "value" : "left"
+      }
+    },
+    "reference" : "2fa69627-7730-4d23-8ea4-5ab7b1d2c56c",
+    "hasValidationError" : false,
+    "id" : "pbText"
+  } ] ],
+  "assets" : [ {
+    "id" : "4f1ac475-79d5-42c5-8b3f-7064b39d9053",
+    "name" : "localization.json",
+    "type" : "json",
+    "order" : 0,
+    "external" : false
+  }, {
+    "id" : "f0bb8796-b716-42bc-b261-25de536f727b",
+    "name" : "style.css",
+    "type" : "css",
+    "order" : 0,
+    "external" : false
+  } ],
+  "inactiveAssets" : [ ],
+  "data" : {
+    "vacationRequest" : {
+      "type" : "url",
+      "value" : "../API/bdm/businessData/com.company.model.VacationRequest?p=0&c=100&q=find",
+      "exposed" : false
+    },
+    "temp" : {
+      "type" : "json",
+      "value" : "{}",
+      "exposed" : false
+    },
+    "exp_build_cancellation_payload" : {
+      "type" : "expression",
+      "value" : "return {\r\n  \"messageName\" : \"cancellation_message\" ,\r\n  \"targetProcess\": \"VacationRequestBasic\",\r\n  \"targetFlowNode\": \"cancellationProcess\", //Optional\r\n  \"messageContent\" : {\r\n  },\r\n  \"correlations\" : {\r\n      \"correlation_key\" : {\r\n          \"value\" : $data.temp.selected.newRequestProcessInstanceId\r\n      }\r\n  }\r\n}",
+      "exposed" : false
+    }
+  },
+  "hasValidationError" : false,
+  "uuid" : "cffb1edf-8424-4ff2-b7e9-71d0e4f12e0f",
+  "type" : "page",
+  "description" : "Page generated with Bonita UI designer"
+}
